@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       resources :decks, only: [:index, :show]
     end
   end
+
+  get '/decks/:id', to: "homes#index"
 end
