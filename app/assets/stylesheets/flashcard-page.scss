@@ -1,0 +1,28 @@
+.flashcard {
+  height: 250px;
+  width: 40%;
+  margin-top: 40px;
+  margin-left: 30%;
+  margin-right: 30%;
+  border: 1px solid #000000;
+}
+
+.flashcard-navigation {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.flashcard-navigation-centerize {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+#arrow {
+  color: #3A8BB6;
+}
+
+#arrow:hover {
+  cursor: pointer;
+}
