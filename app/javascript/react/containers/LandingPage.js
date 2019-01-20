@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import DeckTile from '../components/DeckTile'
+
 class LandingPage extends Component {
   constructor(props) {
     super(props);
@@ -32,7 +34,14 @@ class LandingPage extends Component {
 
     if (this.state.decks) {
       decks = this.state.decks.map(deck => {
-        return <li key={deck.id}>{deck.name}</li>
+        return(
+          <DeckTile
+            key={deck.id}
+            id={deck.id}
+            name={deck.name}
+            flashcards={deck.flashcards}
+          />
+        )
       })
     }
 
