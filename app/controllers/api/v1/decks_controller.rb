@@ -1,6 +1,10 @@
 class Api::V1::DecksController < ApplicationController
   def index
-    render json: current_user.decks
+    if current_user
+      render json: current_user.decks
+    else
+      render json: Deck.all
+    end
   end
 
   def show
