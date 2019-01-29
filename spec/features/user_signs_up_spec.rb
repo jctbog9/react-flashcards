@@ -6,12 +6,6 @@ feature 'user registers', %Q{
   So that I can create an account
 } do
 
-  # Acceptance Criteria:
-  # * I must specify a valid email address,
-  #   password, and password confirmation
-  # * If I don't specify the required information, I am presented with
-  #   an error message
-
   scenario 'provide valid registration information' do
     visit new_user_registration_path
 
@@ -21,7 +15,6 @@ feature 'user registers', %Q{
 
     click_button 'Sign up'
 
-    expect(page).to have_content('Welcome! You have signed up successfully.')
     expect(page).to have_content('Sign Out')
   end
 
@@ -29,7 +22,6 @@ feature 'user registers', %Q{
     visit new_user_registration_path
 
     click_button 'Sign up'
-    expect(page).to have_content("can't be blank")
     expect(page).to_not have_content('Sign Out')
   end
 end
