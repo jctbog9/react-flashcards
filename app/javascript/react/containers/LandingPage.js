@@ -31,22 +31,35 @@ class LandingPage extends Component {
   render() {
 
     let decks;
+    let welcomeMessage;
 
     if (this.state.decks) {
       decks = this.state.decks.map(deck => {
         return(
-          <DeckTile
-            key={deck.id}
-            id={deck.id}
-            name={deck.name}
-            flashcards={deck.flashcards}
-          />
+          <div className="front-page-deck" key={deck.id}>
+            <div className="centering-deck-tiles" key={deck.id}>
+              <DeckTile
+                key={deck.id}
+                id={deck.id}
+                name={deck.name}
+                flashcards={deck.flashcards}
+                author={deck.user.email}
+              />
+            </div>
+          </div>
         )
       })
     }
 
+    if (window.currentUser) {
+      welcomeMessage = <h2>Welcome {window.currentUser.email}</h2>
+    } else {
+      welcomeMessage = <h2>Recently Created:</h2>
+    }
+
     return(
       <div>
+        {welcomeMessage}
         {decks}
       </div>
     );

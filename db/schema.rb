@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_01_20_012847) do
     t.string "back", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "deck_id"
+    t.bigint "deck_id", null: false
     t.index ["deck_id"], name: "index_flashcards_on_deck_id"
   end
 

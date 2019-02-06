@@ -65,21 +65,33 @@ class FlashcardApp extends Component {
 
     if (this.state.side === 'front' && this.state.flashcards){
       card =
-      <div className="flashcard">
-        <h2>{this.state.flashcards[this.state.flashcardNumber].front}</h2>
+      <div className="flashcard-app">
+        <h2>Question</h2>
+        <div className="flashcard">
+          <div className="my-deck-tile-content">
+            <h2>{this.state.flashcards[this.state.flashcardNumber].front}</h2>
+          </div>
+        </div>
+        <h3>{this.state.flashcardNumber + 1}/{this.state.flashcards.length}</h3>
       </div>
 
       answerButton =
-      <button onClick={this.handleBackClick}>Show Back</button>
+      <button onClick={this.handleBackClick}>Show Answer</button>
 
     } else if (this.state.side === 'back' && this.state.flashcards){
       card =
-      <div className="flashcard">
-        <h2>{this.state.flashcards[this.state.flashcardNumber].back}</h2>
+      <div className="flashcard-app">
+        <h2>Answer</h2>
+        <div className="flashcard">
+          <div className="my-deck-tile-content">
+            <h5>{this.state.flashcards[this.state.flashcardNumber].back}</h5>
+          </div>
+        </div>
+        <h3>{this.state.flashcardNumber + 1}/{this.state.flashcards.length}</h3>
       </div>
 
       answerButton =
-      <button onClick={this.handleFrontClick}>Show Front</button>
+      <button onClick={this.handleFrontClick}>Show Question</button>
     }
 
     return(
@@ -87,9 +99,13 @@ class FlashcardApp extends Component {
         {card}
         <div className="flashcard-navigation">
           <div className="flashcard-navigation-centerize">
-            <i onClick={this.previousFlashcard} id="arrow" className="fas fa-caret-square-left fa-3x"/>
-            {answerButton}
-            <i onClick={this.nextFlashcard} id="arrow" className="fas fa-caret-square-right fa-3x"/>
+            <div className="arrows">
+              <i onClick={this.previousFlashcard} id="arrow" className="fas fa-caret-square-left fa-3x"/>
+            </div>
+              {answerButton}
+            <div className="arrows">
+              <i onClick={this.nextFlashcard} id="arrow" className="fas fa-caret-square-right fa-3x"/>
+            </div>
           </div>
         </div>
       </div>

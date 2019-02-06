@@ -1,7 +1,56 @@
+#plus-icon {
+  margin-left: 45%;
+  margin-right: 45%;
+  text-align: center;
+  color: #6C2577;
+}
+
+#plus-icon:hover {
+  transform: scale(1.1);
+  transition-duration: 0.2s;
+  color: #3D114A;
+  cursor: pointer;
+}
+
 .my-deck-tile {
   float: left;
   width: 200px;
   height: 180px;
   border: 1px solid #000000;
   margin: 10px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+}
+
+.my-deck-tile-content {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.decks-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.new-card-form {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border: 5px solid #761A7B;
+  border-radius: 20px;
+  background-color: #E497B9;
+}
+
+.flashcards-container {
+  overflow: hidden;
+}
+
+.form-wrapper {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 40px;
+  padding-bottom: 60px;
 }

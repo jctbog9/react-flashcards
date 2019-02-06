@@ -1,6 +1,6 @@
-import MyDeckTile from '../../app/javascript/react/components/MyDeckTile'
+import MyDeckTile from '../../../app/javascript/react/components/MyDeckTile'
 
-import MyDecksContainer from '../../app/javascript/react/containers/MyDecksContainer'
+import MyDecksContainer from '../../../app/javascript/react/containers/MyDecksContainer'
 
 
 describe('MyDecksContainer', () => {

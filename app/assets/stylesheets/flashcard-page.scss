@@ -5,6 +5,8 @@
   margin-left: 30%;
   margin-right: 30%;
   border: 1px solid #000000;
+  border-radius: 20px;
+  overflow: scroll;
 }
 
 .flashcard-navigation {
@@ -14,9 +16,18 @@
 }
 
 .flashcard-navigation-centerize {
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 30%;
+  width: 50%;
+  margin-left: 26%;
+  margin-right: 24%;
+}
+
+.flashcard-navigation-centerize button{
+  width: 175px;
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+  margin-top: 10px;
+  float: left;
+  border-radius: 20px;
 }
 
 #arrow {
@@ -24,5 +35,19 @@
 }
 
 #arrow:hover {
+  color: #007095;
   cursor: pointer;
+}
+
+.flashcard-app h2{
+  text-align: center;
+}
+
+.flashcard-app h3{
+  text-align: center;
+}
+
+.arrows {
+  float: left;
+  margin-top: 10px;
 }
