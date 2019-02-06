@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 import MyDeckTile from '../components/MyDeckTile'
 
@@ -43,8 +44,9 @@ class MyDecksContainer extends Component {
       })
     }
     return(
-      <div>
-        My Decks Container Page
+      <div className="content-wrapper">
+        <h2>My Decks</h2>
+        <Link to={'/new-deck'} className="button">Create New Deck</Link>
         <div className="decks-container">
           {decks}
         </div>

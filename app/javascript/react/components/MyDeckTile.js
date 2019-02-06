@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router';
+
 class MyDeckTile extends Component {
   constructor(props) {
     super(props);
@@ -26,9 +28,13 @@ class MyDeckTile extends Component {
 
     return(
       <div className="my-deck-tile">
-        <p>{this.props.deckName}</p>
-        {amount}
-        <button>Edit</button>
+        <div className="my-deck-tile-content">
+          <p>{this.props.deckName}</p>
+          {amount}
+          <Link to={`my-decks/${this.props.id}/edit`}>
+            <button>Edit</button>
+          </Link>
+        </div>
       </div>
     );
   }
