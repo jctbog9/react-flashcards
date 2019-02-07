@@ -14,12 +14,13 @@
 
 .my-deck-tile {
   float: left;
-  width: 200px;
-  height: 180px;
+  width: 240px;
+  height: 240px;
   border: 1px solid #000000;
   margin: 10px;
   background-color: #FFFFFF;
   border-radius: 20px;
+  overflow: hidden;
 }
 
 .my-deck-tile-content {

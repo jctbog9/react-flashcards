@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :decks, only: [:index, :show, :create]
+      resources :decks, only: [:index, :show, :create, :update]
       resources :flashcards, only: [:index, :show, :create]
     end
   end

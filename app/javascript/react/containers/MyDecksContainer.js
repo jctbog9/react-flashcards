@@ -39,6 +39,7 @@ class MyDecksContainer extends Component {
             id={deck.id}
             deckName={deck.name}
             flashcards={deck.flashcards}
+            private={deck.private}
           />
         )
       })
