@@ -15,6 +15,7 @@ class Api::V1::DecksController < ApplicationController
 
   def create
     Deck.create!(name: deck_params["name"], user_id: current_user.id)
+    render json: "Deck successfully created"
   end
 
   def update
@@ -23,6 +24,7 @@ class Api::V1::DecksController < ApplicationController
       @deck["private"] = params[:private]
       @deck.save
     end
+    render json: @deck
   end
 
   private
