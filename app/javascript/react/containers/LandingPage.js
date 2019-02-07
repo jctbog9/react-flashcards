@@ -59,7 +59,9 @@ class LandingPage extends Component {
 
     return(
       <div>
-        {welcomeMessage}
+        <div className="welcome-message">
+          {welcomeMessage}
+        </div>
         {decks}
       </div>
     );
