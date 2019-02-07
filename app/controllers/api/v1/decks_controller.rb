@@ -5,7 +5,7 @@ class Api::V1::DecksController < ApplicationController
     if current_user
       render json: current_user.decks
     else
-      render json: Deck.all
+      render json: Deck.where(private: false)
     end
   end
 
@@ -17,9 +17,21 @@ class Api::V1::DecksController < ApplicationController
     Deck.create!(name: deck_params["name"], user_id: current_user.id)
   end
 
+  def update
+    @deck = Deck.find(params[:id])
+    if @deck
+      @deck["private"] = params[:private]
+      @deck.save
+    end
+  end
+
   private
 
   def deck_params
     params.require(:deck).permit(:name)
+  end
+
+  def privacy_params
+    params.require(:deck).permit(:private)
   end
 end
