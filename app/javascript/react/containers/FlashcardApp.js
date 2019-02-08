@@ -54,8 +54,10 @@ class FlashcardApp extends Component {
     let flashcardNumber = this.state.flashcardNumber
     if (flashcardNumber === 0){
       this.setState({ flashcardNumber: this.state.flashcards.length - 1 })
+      this.handleFrontClick()
     } else {
       this.setState({ flashcardNumber: flashcardNumber - 1 })
+      this.handleFrontClick()
     }
   }
 
@@ -96,17 +98,21 @@ class FlashcardApp extends Component {
 
     return(
       <div>
-        {card}
-        <div className="flashcard-navigation">
-          <div className="flashcard-navigation-centerize">
-            <div className="arrows">
-              <i onClick={this.previousFlashcard} id="arrow" className="fas fa-caret-square-left fa-3x"/>
-            </div>
-              {answerButton}
-            <div className="arrows">
-              <i onClick={this.nextFlashcard} id="arrow" className="fas fa-caret-square-right fa-3x"/>
+        <div className="flashcard-app">
+          {card}
+          <div className="flashcard-navigation">
+            <div className="flashcard-navigation-centerize">
+              <div className="arrows">
+                <i onClick={this.previousFlashcard} id="arrow" className="fas fa-caret-square-left fa-3x"/>
+              </div>
+                {answerButton}
+              <div className="arrows">
+                <i onClick={this.nextFlashcard} id="arrow" className="fas fa-caret-square-right fa-3x"/>
+              </div>
             </div>
           </div>
+        </div>
+        <div className="bottom-spacer">
         </div>
       </div>
     );
