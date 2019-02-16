@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create!(email: '1234@gmail.com', password: '123456')
+User.create!(email: 'user2@gmail.com', password: '123456')
+User.create!(email: 'user3@gmail.com', password: '123456')
+User.create!(email: 'user4@gmail.com', password: '123456')
 
 Deck.create!(name: 'Launch Academy Week 2', user_id: 1)
 Deck.create!(name: 'Second Deck', user_id: 1)
@@ -24,3 +27,9 @@ Flashcard.create!(front: 'In the context of HTTP, what is a query string and how
 Flashcard.create!(front: 'What does it mean when we say HTTP is stateless? What are the benefits and drawbacks of having a stateless protocol?', back: 'A stateless protocol does not require the server to retain information or status about each user for the duration of multiple requests. This simplifies the contract between client and server, and in many cases minimizes the amount of data that needs to be transferred.', deck_id: 1 )
 
 Flashcard.create!(front: 'Different Deck', back: 'Here is the difference', deck_id: 2)
+
+Follow.create!(follower_id: 1, followee_id: 2)
+Follow.create!(follower_id: 1, followee_id: 3)
+Follow.create!(follower_id: 1, followee_id: 4)
+Follow.create!(follower_id: 2, followee_id: 3)
+Follow.create!(follower_id: 2, followee_id: 4)

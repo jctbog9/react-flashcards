@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_valid(:email).when("test@gmail.com") }
+  it { should_not have_valid(:email).when("invalid email", nil) }
+
+  it { should have_valid(:password).when("123456") }
+  it { should_not have_valid(:password).when("1234", nil) }
 end

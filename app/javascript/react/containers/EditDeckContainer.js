@@ -60,8 +60,12 @@ class EditDeckContainer extends Component {
         return(
           <div key={flashcard.front} className="my-deck-tile">
             <div className="my-deck-tile-content">
-              <p>Front: {flashcard.front}</p>
-              <p>Back: {flashcard.back}</p>
+              <div className="mini-card">
+                <p><b>Front:</b> {flashcard.front}</p>
+              </div>
+              <div className="mini-card">
+                <p><b>Back:</b> {flashcard.back}</p>
+              </div>
             </div>
           </div>
         )

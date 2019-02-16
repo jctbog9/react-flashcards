@@ -1,6 +1,6 @@
 import DeckTile from '../../../app/javascript/react/components/DeckTile'
 
-describe('MyDecksContainer', () => {
+describe('DeckTile', () => {
   let wrapper;
   let flashcards;
 

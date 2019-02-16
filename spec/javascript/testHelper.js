@@ -3,6 +3,8 @@ import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
 import 'jasmine-ajax';
 
+import fetchPonyfill from 'fetch-ponyfill';
+
 Object.assign(global, {
   jasmineEnzyme,
   mount,
