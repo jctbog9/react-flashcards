@@ -2,10 +2,15 @@ import React from 'react'
 import { Router, browserHistory, Route, IndexRoute } from 'react-router';
 
 import LandingPage from '../containers/LandingPage';
+
 import FlashcardApp from '../containers/FlashcardApp';
+
 import MyDecksContainer from '../containers/MyDecksContainer';
-import NewDeckContainer from '../containers/NewDeckContainer';
 import EditDeckContainer from '../containers/EditDeckContainer';
+
+import NewDeckContainer from '../containers/NewDeckContainer';
+
+import ProfilePage from '../containers/ProfilePage';
 
 const App = (props) => {
   return (
@@ -18,6 +23,8 @@ const App = (props) => {
       <Route path='/my-decks/:id/edit' component={EditDeckContainer}/>
 
       <Route path='/new-deck' component={NewDeckContainer}/>
+
+      <Route path='/profiles/:id' component={ProfilePage}/>
     </Router>
   )
 }

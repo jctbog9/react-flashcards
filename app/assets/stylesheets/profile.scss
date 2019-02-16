@@ -1,0 +1,79 @@
+.header {
+  border: 1px solid #000000;
+  border-radius: 20px;
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-deck-box {
+  float: left;
+  width: 40%;
+  height: 120px;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 10px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.profile-deck-box-wrapper {
+  width: 45%;
+  margin-left: 5%;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  border-radius: 20px;
+  border: 1px solid #000000;
+  overflow: hidden;
+  float: left;
+}
+
+#decks {
+  margin-left: 5%;
+}
+
+.interaction-box {
+  float: left;
+  border: 1px solid #000000;
+  width: 40%;
+  height: 400px;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-radius: 20px;
+}
+
+.interaction-centerize {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-photo {
+  margin-left: 40%;
+  margin-right: 40%;
+  height: 200px;
+  width: 20%;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  float: left;
+}
+
+.cover-photo {
+  height: 280px;
+  border-bottom: 1px solid #000000;
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+#follow-button {
+  width: 180px;
+  border-radius: 20px;
+}

@@ -20,6 +20,7 @@ describe('MyDecksContainer', () => {
         id="1"
         deckName="test deck"
         flashcards={flashcards}
+        checked={false}
       />
     )
   });
@@ -40,7 +41,8 @@ describe('MyDecksContainer', () => {
           updated_at: '2019-01-20T01:50:01.614Z',
           deck_id: 1
         }
-      ]
+      ],
+      checked: false
     });
   });
 });
