@@ -31,7 +31,7 @@ class Api::V1::ProfilesController < ApplicationController
     decks.each do |deck|
       decks_and_cards << {id: deck[:id], name: deck[:name], flashcards: deck.flashcards, private: deck[:private]}
     end
-    return {user: user, decks: decks_and_cards}
+    return {user: user, decks: decks_and_cards.take(6)}
   end
 
   def public_decks(id)
@@ -44,6 +44,6 @@ class Api::V1::ProfilesController < ApplicationController
         public_decks << deck
       end
     end
-    return {user: user, decks: public_decks}
+    return {user: user, decks: public_decks.take(6)}
   end
 end

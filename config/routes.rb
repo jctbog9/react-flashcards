@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :profiles, only: [:index, :show]
       resources :users, only: [:index, :show] do
         resources :follows, only: [:index, :create, :destroy]
+        resources :profile_decks, only: [:index]
       end
     end
   end
@@ -17,5 +18,6 @@ Rails.application.routes.draw do
   get '/my-decks/:id/edit', to: "homes#index"
   get '/my-decks', to: "homes#index"
   get '/new-deck', to: "homes#index"
-  get '/profiles/:id', to: "homes#index"
+  get '/users/:id', to: "homes#index"
+  get '/users/:id/profile_decks', to: "homes#index"
 end

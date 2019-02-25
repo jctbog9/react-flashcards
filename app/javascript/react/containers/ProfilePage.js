@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router';
+
 import ProfileInteractionsContainer from '../containers/ProfileInteractionsContainer'
 
 import ProfileDeck from '../components/ProfileDeck'
@@ -69,6 +71,9 @@ class ProfilePage extends Component {
               <h3>Decks:</h3>
             </div>
             {decks}
+            <Link to={`/users/${this.props.params.id}/profile_decks`}>
+              See All
+            </Link>
           </div>
         </div>
         <div className="interaction-box">
