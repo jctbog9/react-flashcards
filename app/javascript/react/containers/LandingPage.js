@@ -35,6 +35,15 @@ class LandingPage extends Component {
 
     if (this.state.decks) {
       decks = this.state.decks.map(deck => {
+
+        let author;
+
+        if (deck.user.username) {
+          author = deck.user.username
+        } else {
+          author = deck.user.email
+        }
+
         return(
           <div className="front-page-deck" key={deck.id}>
             <div className="centering-deck-tiles" key={deck.id}>
@@ -43,7 +52,7 @@ class LandingPage extends Component {
                 id={deck.id}
                 name={deck.name}
                 flashcards={deck.flashcards}
-                author={deck.user.email}
+                author={author}
               />
             </div>
           </div>
@@ -51,7 +60,9 @@ class LandingPage extends Component {
       })
     }
 
-    if (window.currentUser) {
+    if (window.currentUser && window.currentUser.username) {
+      welcomeMessage = <h2>Welcome {window.currentUser.username}</h2>
+    } else if (window.currentUser) {
       welcomeMessage = <h2>Welcome {window.currentUser.email}</h2>
     } else {
       welcomeMessage = <h2>Recently Created:</h2>

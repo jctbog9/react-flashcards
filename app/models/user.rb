@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates_uniqueness_of :username
+  validates :username, presence: true, uniqueness: true
 
   has_many :decks
   has_many :flashcards, through: :decks
@@ -14,4 +14,5 @@ class User < ApplicationRecord
 
   has_many :followees, through: :followee_follows, source: :followee
   has_many :followee_follows, foreign_key: :follower_id, class_name: "Follow"
+
 end

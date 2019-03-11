@@ -21,7 +21,12 @@
 
     <section class="top-bar-section">
       <ul class="right">
-        <%- if current_user -%>
+        <%- if current_user && current_user.username -%>
+          <li><a href="/profiles/<%= current_user.id =%>"><%= current_user.username %></a></li>
+          <li><a href="/users/edit"><i class="fas fa-user-cog"></i></a></li>
+          <li><a href="/my-decks">My Decks</a></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+        <% elsif current_user %>
           <li><a href="/profiles/<%= current_user.id =%>"><%= current_user.email %></a></li>
           <li><a href="/users/edit"><i class="fas fa-user-cog"></i></a></li>
           <li><a href="/my-decks">My Decks</a></li>
