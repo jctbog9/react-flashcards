@@ -20,7 +20,7 @@ class DeckTile extends Component {
           Flashcards: {this.props.flashcards.length}
         </div>
         <div className="flashcard-total">
-        Author: {this.props.author}    |
+          Author: {this.props.author}    |
         </div>
       </div>
     );

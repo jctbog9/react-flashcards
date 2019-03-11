@@ -36,7 +36,7 @@ class ProfilePage extends Component {
     let request;
 
     if (this.state.user){
-      user = <h2>{this.state.user.email}</h2>
+      user = <h2>{this.state.user.username}</h2>
     }
 
     if (this.state.decks){

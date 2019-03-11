@@ -6,13 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!(email: '1234@gmail.com', password: '123456')
-User.create!(email: 'user2@gmail.com', password: '123456')
-User.create!(email: 'user3@gmail.com', password: '123456')
-User.create!(email: 'user4@gmail.com', password: '123456')
+User.create!(username: "user1", email: '1234@gmail.com', password: '123456')
+User.create!(username: "user2", email: 'user2@gmail.com', password: '123456')
+User.create!(username: "user3", email: 'user3@gmail.com', password: '123456')
+User.create!(username: "user4", email: 'user4@gmail.com', password: '123456')
 
 Deck.create!(name: 'Launch Academy Week 2', user_id: 1)
-Deck.create!(name: 'Second Deck', user_id: 1)
+Deck.create!(name: 'Intro to Japanese', user_id: 1)
 
 Flashcard.create!(front: 'What is an API?', back: 'API is an Application Programming Interface. It is a software intermediary that allows two applications to talk to each other', deck_id: 1 )
 Flashcard.create!(front: 'What are the three key components of a user story?', back: 'We use user stories to succinctly define a feature that delivers business value to an end user. A good user story identifies: The specific role of the user we are trying to serve (As a...) What that role wants to do in the context of the application (I want to...) Why that role wants to work with that functionality (So that...)', deck_id: 1 )
@@ -26,7 +26,13 @@ Flashcard.create!(front: 'Why is it better to direct web traffic over HTTPS as o
 Flashcard.create!(front: 'In the context of HTTP, what is a query string and how is it used?', back: 'Query strings are URI encoded strings that often appear at the end of a URL. They start after the ? in an HTTP request. We often use a query string to qualify a GET request with more information.', deck_id: 1 )
 Flashcard.create!(front: 'What does it mean when we say HTTP is stateless? What are the benefits and drawbacks of having a stateless protocol?', back: 'A stateless protocol does not require the server to retain information or status about each user for the duration of multiple requests. This simplifies the contract between client and server, and in many cases minimizes the amount of data that needs to be transferred.', deck_id: 1 )
 
-Flashcard.create!(front: 'Different Deck', back: 'Here is the difference', deck_id: 2)
+Flashcard.create!(front: 'Watashiwa John desu', back: 'I am John.', deck_id: 2)
+Flashcard.create!(front: 'Otearaiwa doko desuka?', back: 'Where is the restroom?', deck_id: 2)
+Flashcard.create!(front: 'Ohaya gosaimasu', back: 'Hello/ Good morning.', deck_id: 2)
+Flashcard.create!(front: 'Arigato gosaimasu', back: 'Thank you very much.', deck_id: 2)
+Flashcard.create!(front: 'Basute noriba', back: 'Bus Stop', deck_id: 2)
+Flashcard.create!(front: 'Hon\'ya', back: 'Bookstore', deck_id: 2)
+Flashcard.create!(front: 'Eki', back: 'Train station', deck_id: 2)
 
 Follow.create!(follower_id: 1, followee_id: 2)
 Follow.create!(follower_id: 1, followee_id: 3)
