@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates_uniqueness_of :username
+
   has_many :decks
   has_many :flashcards, through: :decks
 
