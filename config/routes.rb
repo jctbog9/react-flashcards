@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   get '/my-decks', to: "homes#index"
   get '/new-deck', to: "homes#index"
   get '/profiles/:id', to: "homes#index"
+  get '/profiles/:id/stats', to: "homes#index"
 end

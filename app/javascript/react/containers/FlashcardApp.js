@@ -26,7 +26,7 @@ class FlashcardApp extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ flashcards: body.flashcards });
+        this.setState({ flashcards: body.flashcards, user: body.user });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -64,10 +64,14 @@ class FlashcardApp extends Component {
   render() {
     let card;
     let answerButton;
+    let author;
 
     if (this.state.side === 'front' && this.state.flashcards){
+      answerButton =
+      <button id="answer-button" onClick={this.handleBackClick}>Show Answer</button>
+
       card =
-      <div className="flashcard-app">
+      <div>
         <h2>Question</h2>
         <div className="flashcard">
           <div className="my-deck-tile-content">
@@ -75,14 +79,23 @@ class FlashcardApp extends Component {
           </div>
         </div>
         <h3>{this.state.flashcardNumber + 1}/{this.state.flashcards.length}</h3>
+        <div className="flashcard-navigation-centerize">
+          <div className="arrows">
+            <i onClick={this.previousFlashcard} id="arrow" className="fas fa-caret-square-left fa-3x"/>
+          </div>
+          {answerButton}
+          <div className="arrows">
+            <i onClick={this.nextFlashcard} id="arrow" className="fas fa-caret-square-right fa-3x"/>
+          </div>
+        </div>
       </div>
 
-      answerButton =
-      <button onClick={this.handleBackClick}>Show Answer</button>
-
     } else if (this.state.side === 'back' && this.state.flashcards){
+      answerButton =
+      <button id="answer-button" onClick={this.handleFrontClick}>Show Question</button>
+
       card =
-      <div className="flashcard-app">
+      <div>
         <h2>Answer</h2>
         <div className="flashcard">
           <div className="my-deck-tile-content">
@@ -90,29 +103,27 @@ class FlashcardApp extends Component {
           </div>
         </div>
         <h3>{this.state.flashcardNumber + 1}/{this.state.flashcards.length}</h3>
+        <div className="flashcard-navigation-centerize">
+          <div className="arrows">
+            <i onClick={this.previousFlashcard} id="arrow" className="fas fa-caret-square-left fa-3x"/>
+          </div>
+          {answerButton}
+          <div className="arrows">
+            <i onClick={this.nextFlashcard} id="arrow" className="fas fa-caret-square-right fa-3x"/>
+          </div>
+        </div>
       </div>
+    }
 
-      answerButton =
-      <button onClick={this.handleFrontClick}>Show Question</button>
+    if (this.state.user) {
+      author = <p className="author">Author: {this.state.user.username}</p>
     }
 
     return(
       <div>
         <div className="flashcard-app">
           {card}
-          <div className="flashcard-navigation">
-            <div className="flashcard-navigation-centerize">
-              <div className="arrows">
-                <i onClick={this.previousFlashcard} id="arrow" className="fas fa-caret-square-left fa-3x"/>
-              </div>
-                {answerButton}
-              <div className="arrows">
-                <i onClick={this.nextFlashcard} id="arrow" className="fas fa-caret-square-right fa-3x"/>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bottom-spacer">
+          {author}
         </div>
       </div>
     );

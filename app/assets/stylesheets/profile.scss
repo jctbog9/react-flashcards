@@ -22,8 +22,9 @@
 }
 
 .profile-deck-box-wrapper {
-  width: 45%;
-  margin-left: 5%;
+  width: 40%;
+  margin-left: 7%;
+  margin-right: 3%;
   padding-top: 20px;
   padding-bottom: 40px;
   border-radius: 20px;
@@ -32,18 +33,18 @@
   float: left;
 }
 
-#decks {
-  margin-left: 5%;
-}
-
 .interaction-box {
   float: left;
   border: 1px solid #000000;
   width: 40%;
   height: 400px;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 3%;
+  margin-right: 7%;
   border-radius: 20px;
+}
+
+#decks {
+  margin-left: 5%;
 }
 
 .interaction-centerize {
@@ -74,6 +75,11 @@
 }
 
 #follow-button {
+  width: 180px;
+  border-radius: 20px;
+}
+
+#stats-button {
   width: 180px;
   border-radius: 20px;
 }
