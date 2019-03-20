@@ -1,12 +1,7 @@
 .flashcard-app {
-  background-color: rgba(255,10,100,0.6);
+  background-color: rgba(230,230,255,0.8);
   border: 1px solid #000000;
-  height: 80vh;
-}
-
-.bottom-spacer {
-  height: 15vh;
-  background-color: rgba(136,209,243,0.9);
+  height: 100vh;
 }
 
 .flashcard {
@@ -19,30 +14,25 @@
   border-radius: 20px;
   overflow: scroll;
   background-color: rgba(255,255,255,0.9);
-}
-
-.flashcard-navigation {
-  width: 40%;
-  margin-left: 30%;
-  margin-right: 30%;
+  text-align: center;
 }
 
 .flashcard-navigation-centerize {
-  width: 50%;
-  margin-left: 26%;
-  margin-right: 24%;
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
 }
 
-.flashcard-navigation-centerize button{
+#answer-button{
   width: 175px;
-  margin-left: 7.5px;
-  margin-right: 7.5px;
-  margin-top: 10px;
-  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
   border-radius: 20px;
+  float: left;
 }
 
 #arrow {
+  background-size: contain;
   background-color: #FFFFFF;
   border-radius: 5px;
   color: #3A8BB6;
@@ -53,6 +43,10 @@
   cursor: pointer;
 }
 
+.arrows {
+  float: left;
+}
+
 .flashcard-app h2{
   text-align: center;
 }
@@ -61,7 +55,8 @@
   text-align: center;
 }
 
-.arrows {
-  float: left;
-  margin-top: 10px;
+.author {
+ float: right;
+ margin-top: 22vh;
+ margin-right: 2vh;
 }

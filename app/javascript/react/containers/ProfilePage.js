@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router'
 
 import ProfileInteractionsContainer from '../containers/ProfileInteractionsContainer'
 
@@ -34,6 +35,7 @@ class ProfilePage extends Component {
     let user;
     let decks;
     let request;
+    let stats;
 
     if (this.state.user){
       user = <h2>{this.state.user.username}</h2>
@@ -50,6 +52,15 @@ class ProfilePage extends Component {
           />
         )
       })
+    }
+
+    if (window.currentUser){
+      if (window.currentUser.id === Number(this.props.params.id)) {
+        stats =
+        <Link to={`/profiles/${this.props.params.id}/stats`}>
+          <button id="stats-button">My Stats</button>
+        </Link>
+      }
     }
 
     return(
@@ -76,6 +87,7 @@ class ProfilePage extends Component {
             <ProfileInteractionsContainer
               id={this.props.params.id}
             />
+            {stats}
           </div>
         </div>
       </div>
