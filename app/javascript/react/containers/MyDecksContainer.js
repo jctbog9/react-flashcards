@@ -8,6 +8,7 @@ class MyDecksContainer extends Component {
     super(props);
     this.state = {
     };
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   componentDidMount(){
@@ -28,6 +29,10 @@ class MyDecksContainer extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  handleDelete(deckId){
+    this.setState({ decks: this.state.decks.filter(deck => deck.id !== deckId) })
+  }
+
   render() {
     let decks;
 
@@ -40,6 +45,7 @@ class MyDecksContainer extends Component {
             deckName={deck.name}
             flashcards={deck.flashcards}
             private={deck.private}
+            handleDelete={this.handleDelete}
           />
         )
       })

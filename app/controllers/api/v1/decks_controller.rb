@@ -27,6 +27,12 @@ class Api::V1::DecksController < ApplicationController
     render json: @deck
   end
 
+  def destroy
+    @deck = Deck.find(params[:id])
+    @deck.destroy
+    render json: "Succesfully Deleted!"
+  end
+
   private
 
   def deck_params
