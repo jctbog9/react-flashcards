@@ -12,10 +12,24 @@
   cursor: pointer;
 }
 
+#delete-button {
+  background-color: #E10001;
+  margin-right: 10px;
+}
+
+#delete-button:hover {
+  background-color: #C70000;
+  transform: scale(1.1);
+}
+
+#undo-button:hover {
+  transform: scale(1.1);
+}
+
 .my-deck-tile {
   float: left;
   width: 240px;
-  height: 240px;
+  height: 300px;
   border: 1px solid #000000;
   margin: 10px;
   background-color: #FFFFFF;
