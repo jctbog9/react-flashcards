@@ -14,7 +14,7 @@ class ProfilePage extends Component {
   }
 
   componentDidMount(){
-    fetch(`/api/v1/profiles/${this.props.params.id}`)
+    fetch(`/api/v1/users/${this.props.params.id}`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -26,7 +26,7 @@ class ProfilePage extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ user: body.user, decks: body.decks });
+        this.setState({ userId: body.id, username: body.username, email: body.email, followers: body.followees, decks: body.decks });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -37,20 +37,31 @@ class ProfilePage extends Component {
     let request;
     let stats;
 
-    if (this.state.user){
-      user = <h2>{this.state.user.username}</h2>
+    if (this.state.userId){
+      user = <h2>{this.state.username}</h2>
     }
 
     if (this.state.decks){
       decks = this.state.decks.map(deck => {
-        return(
-          <ProfileDeck
-            key={deck.id}
-            id={deck.id}
-            name={deck.name}
-            flashcards={deck.flashcards}
-          />
-        )
+        if (deck.private === false){
+          return(
+            <ProfileDeck
+              key={deck.id}
+              id={deck.id}
+              name={deck.name}
+              flashcards={deck.flashcards}
+            />
+          )
+        } else if (deck.private === true && window.currentUser.id === deck.user.id) {
+          return(
+            <ProfileDeck
+              key={deck.id}
+              id={deck.id}
+              name={deck.name}
+              flashcards={deck.flashcards}
+            />
+          )
+        }
       })
     }
 

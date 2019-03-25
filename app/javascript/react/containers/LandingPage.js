@@ -44,19 +44,21 @@ class LandingPage extends Component {
           author = deck.user.email
         }
 
-        return(
-          <div className="front-page-deck" key={deck.id}>
-            <div className="centering-deck-tiles" key={deck.id}>
-              <DeckTile
-                key={deck.id}
-                id={deck.id}
-                name={deck.name}
-                flashcards={deck.flashcards}
-                author={author}
-              />
+        if (deck.private === false){
+          return(
+            <div className="front-page-deck" key={deck.id}>
+              <div className="centering-deck-tiles" key={deck.id}>
+                <DeckTile
+                  key={deck.id}
+                  id={deck.id}
+                  name={deck.name}
+                  flashcards={deck.flashcards}
+                  author={author}
+                />
+              </div>
             </div>
-          </div>
-        )
+          )
+        }
       })
     }
 
