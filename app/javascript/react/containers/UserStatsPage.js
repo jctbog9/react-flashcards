@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router'
 
-import Graph from './Graph'
+import Graph from '../components/Graph'
 
-class ProfilePage extends Component {
+class UserStatsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,22 +31,17 @@ class ProfilePage extends Component {
   render() {
     let graph;
 
-    if (this.state.decksLength) {
-      if (this.state.decksLength > 0 && this.state.followeeCount > 0){
-        graph =
-        <Graph
-          user={window.currentUser.username}
-          decksLength={this.state.decksLength}
-          followeeCount={this.state.followeeCount}
-        />
-      } else {
-        <Graph
-          user={window.currentUser.username}
-          decksLength={0}
-          followeeCount={0}
-        />
-      }
+    console.log(this.state)
+
+    if (this.state.decksLength >= 0 || this.state.followeeCount >= 0) {
+      graph =
+      <Graph
+        user={window.currentUser.username}
+        decksLength={this.state.decksLength}
+        followeeCount={this.state.followeeCount}
+      />
     }
+
     return(
       <div className="content-wrapper">
         <div className="graph-container">
@@ -57,4 +52,4 @@ class ProfilePage extends Component {
   }
 };
 
-export default ProfilePage;
+export default UserStatsPage;

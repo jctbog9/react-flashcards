@@ -54,6 +54,7 @@ class LandingPage extends Component {
                   name={deck.name}
                   flashcards={deck.flashcards}
                   author={author}
+                  stars={deck.stars}
                 />
               </div>
             </div>

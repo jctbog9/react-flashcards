@@ -16,6 +16,10 @@
 
  */
 
+ #loading-animation {
+   margin: 10px;
+ }
+
  body {
    background-color: #FFFFFF;
    background-image: url('https://i1.wp.com/gamethevideo.com/wp-content/uploads/2019/02/background.jpg');
