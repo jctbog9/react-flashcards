@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import DeckStar from '../components/DeckStar'
+
 class FlashcardApp extends Component {
   constructor(props) {
     super(props);
@@ -26,7 +28,11 @@ class FlashcardApp extends Component {
       })
       .then(response => response.json())
       .then(body => {
-        this.setState({ flashcards: body.flashcards, user: body.user });
+        let stars = body.stars.map(star => {
+          return (star.user.username)
+        })
+
+        this.setState({ deckId: body.id, name: body.name, flashcards: body.flashcards, user: body.user, stars: stars });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -65,6 +71,25 @@ class FlashcardApp extends Component {
     let card;
     let answerButton;
     let author;
+    let header;
+    let star;
+
+    if (window.currentUser) {
+      star =
+      <DeckStar
+        deckId={this.state.deckId}
+        stars={this.state.stars}
+        id={this.props.params.id}
+      />
+    }
+
+    if (this.state.stars) {
+      header =
+      <div className="header">
+        <h1>{this.state.name}</h1>
+        {star}
+      </div>
+    }
 
     if (this.state.side === 'front' && this.state.flashcards){
       answerButton =
@@ -72,9 +97,10 @@ class FlashcardApp extends Component {
 
       card =
       <div>
-        <h2>Question</h2>
+        {header}
         <div className="flashcard">
           <div className="my-deck-tile-content">
+            <h2>Question</h2>
             <h2>{this.state.flashcards[this.state.flashcardNumber].front}</h2>
           </div>
         </div>
@@ -96,9 +122,10 @@ class FlashcardApp extends Component {
 
       card =
       <div>
-        <h2>Answer</h2>
+        {header}
         <div className="flashcard">
           <div className="my-deck-tile-content">
+            <h2>Answer</h2>
             <h5>{this.state.flashcards[this.state.flashcardNumber].back}</h5>
           </div>
         </div>

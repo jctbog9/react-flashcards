@@ -10,11 +10,15 @@ class Api::V1::DecksController < ApplicationController
   end
 
   def show
-    render json: Deck.find(params[:id])
+    @deck = Deck.find(params[:id])
+    render json: @deck
   end
 
   def create
-    Deck.create!(name: deck_params["name"], user_id: current_user.id)
+    @deck = Deck.new(name: deck_params["name"], user_id: current_user.id)
+    if current_user
+      @deck.save
+    end
     render json: "Deck successfully created"
   end
 
@@ -42,4 +46,5 @@ class Api::V1::DecksController < ApplicationController
   def privacy_params
     params.require(:deck).permit(:private)
   end
+
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show] do
         resources :follows, only: [:index, :create, :destroy]
       end
+      resources :stars, only: [:index, :show, :create, :destroy]
     end
   end
 

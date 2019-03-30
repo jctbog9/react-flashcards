@@ -1,7 +1,32 @@
+#empty-star {
+  color: #3A8BB6;
+  margin: 10px;
+}
+
+#empty-star:hover {
+  color: #007095;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+
+#starred {
+  color: #FCC201;
+  margin: 10px;
+}
+
+#starred:hover {
+  color: #DC9202;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition-duration: 0.3s;
+}
+
 .flashcard-app {
   background-color: rgba(230,230,255,0.8);
   border: 1px solid #000000;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 .flashcard {
@@ -13,7 +38,7 @@
   border: 1px solid #000000;
   border-radius: 20px;
   overflow: scroll;
-  background-color: rgba(255,255,255,0.9);
+  background-color: #F1F3F8;
   text-align: center;
 }
 
