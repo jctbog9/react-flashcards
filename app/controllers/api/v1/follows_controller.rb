@@ -24,29 +24,17 @@ class Api::V1::FollowsController < ApplicationController
   private
 
   def following?
-    following = nil
-    if current_user && current_user.id != params[:user_id].to_i
-      user_follows.each do |follow|
-        if follow[:followee_id] == current_user.id
-          return true
-        else
-          following = false
-        end
+    @user = User.find(params[:user_id])
+    if current_user
+      if current_user.id != @user.id
+        return current_user.followers.include?(@user)
       end
     end
-    return following
   end
 
   def user_follows
-    user_follows = []
-    following_status = false
-    @follows = Follow.all
-    @follows.each do |follow|
-      if follow[:follower_id] == params[:user_id].to_i
-        user_follows << follow
-      end
-    end
-    return user_follows
+    @user = User.find(params[:user_id])
+    return @user.followees
   end
 
   def follow_params

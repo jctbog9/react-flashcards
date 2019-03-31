@@ -75,7 +75,7 @@ class ProfileInteractionsContainer extends Component {
   render() {
     let follows;
 
-    if (this.state.followingStatus !== null && this.state.followingStatus === false){
+    if (this.state.followingStatus === false){
       follows =
       <div>
         <p>{this.state.followAmount} followers</p>

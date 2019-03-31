@@ -57,19 +57,15 @@
 }
 
 #arrow {
-  background-size: contain;
   background-color: #FFFFFF;
   border-radius: 5px;
   color: #3A8BB6;
+  float: left;
 }
 
 #arrow:hover {
   color: #007095;
   cursor: pointer;
-}
-
-.arrows {
-  float: left;
 }
 
 .flashcard-app h2{
@@ -84,4 +80,18 @@
  float: right;
  margin-top: 22vh;
  margin-right: 2vh;
+}
+
+@media only screen and (max-width: 800px) {
+  .flashcard {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .flashcard-navigation-centerize {
+    width: 80%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
 }
