@@ -30,6 +30,11 @@ bundle exec rake db:migrate
 bundle exec rake db:seed
 ```
 
+# Running Locally
+
+After previous instructions have completed successfully run `rails s` in one tab and `yarn start` in another.
+To view the web page visit localhost:3000
+
 # Testing
 
 React-Flashcards tests the backend using rspec and its frontend using jasmine-enzyme.
