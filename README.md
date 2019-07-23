@@ -12,17 +12,23 @@ Ruby v2.4.5
 Rails v5.2.1
 ```
 
-# Local Dev Setup
+# Local Dev Configuration
 
 Run the following commands in sequence after cloning the repository to set up.
 ```
 bundle
 yarn install
-yarn start
 ```
-Then in a separate terminal tab/window run `rails s` to start your server.
 
-Navigate to localhost:3000 to view the application.
+# Creating Local Database
+
+Run the following commands in your terminal
+**Make sure you have postgres installed the application uses that as its database**
+```
+bundle exec rake db:create
+bundle exec rake db:migrate
+bundle exec rake db:seed
+```
 
 # Testing
 
