@@ -6,6 +6,10 @@ The application is for creating decks of flashcards, documenting your learning a
 
 Built using Ruby v2.4.5 with a ReactJS front-end being served information through RESTful API endpoints on a rails 5.2.1 server
 
+# Required Dependencies
+Ruby v2.4.5
+Rails v5.2.1
+
 # Local Dev Setup
 
 Run the following commands in sequence after cloning the repository to set up.
