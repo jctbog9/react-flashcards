@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import DailyWordContainer from './DailyWordContainer'
 import DeckTile from '../components/DeckTile'
 
 class LandingPage extends Component {
@@ -31,7 +31,10 @@ class LandingPage extends Component {
   render() {
 
     let decks;
+    let deckMessage;
     let welcomeMessage;
+
+    let dailyWord;
 
     if (this.state.decks) {
       decks = this.state.decks.map(deck => {
@@ -61,20 +64,40 @@ class LandingPage extends Component {
           )
         }
       })
+
     }
 
     if (window.currentUser && window.currentUser.username) {
-      welcomeMessage = <h2>Welcome {window.currentUser.username}</h2>
+      welcomeMessage =
+      <div className="welcome-message">
+        <h2>Welcome {window.currentUser.username}</h2>
+      </div>
+
+      deckMessage = <h2>My Decks:</h2>
     } else if (window.currentUser) {
-      welcomeMessage = <h2>Welcome {window.currentUser.email}</h2>
+      welcomeMessage =
+      <div className="welcome-message">
+        <h2>Welcome {window.currentUser.email}</h2>
+      </div>
+
+      deckMessage = <h2>My Decks:</h2>
     } else {
-      welcomeMessage = <h2>Recently Created:</h2>
+      deckMessage = <h2>Recently Created:</h2>
+    }
+
+    if (window.currentUser) {
+      dailyWord =
+      <div>
+        <DailyWordContainer />
+      </div>
     }
 
     return(
       <div>
+        {welcomeMessage}
+        {dailyWord}
         <div className="welcome-message">
-          {welcomeMessage}
+          {deckMessage}
         </div>
         {decks}
       </div>

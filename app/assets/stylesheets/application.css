@@ -25,6 +25,7 @@
    background-image: url('https://i1.wp.com/gamethevideo.com/wp-content/uploads/2019/02/background.jpg');
    background-size: cover;
    background-attachment: fixed;
+   margin-bottom: 60px;
  }
 
 .content-wrapper {
