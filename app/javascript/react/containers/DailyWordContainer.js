@@ -27,6 +27,7 @@ class DailyWordContainer extends Component {
       })
       .then(response => response.json())
       .then(body => {
+        console.log(body)
         this.setState({ word: body.word, definitions: body.definitions });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -67,8 +68,8 @@ class DailyWordContainer extends Component {
     return(
       <div className="daily-word-container">
         <h2>Daily Word <i className="fas fa-glasses" id="glasses"/>: {word}</h2>
-        <p>Source - {source}</p>
         <p>Definition - {definition}</p>
+        <p>Source - {source}</p>
         <div className="buttons">
           <i onClick={this.previousDefinition} className="fas fa-caret-square-left fa-3x" id="arrow"/>
           <i onClick={this.nextDefinition} className="fas fa-caret-square-right fa-3x" id="arrow"/>
