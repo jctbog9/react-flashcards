@@ -41,3 +41,10 @@ React-Flashcards tests the backend using rspec and its frontend using jasmine-en
 
 To run frontend tests run `yarn test`
 To run backend tests run `rspec`
+
+# Backlog Items
+
+- (Low) Jasmine-Enzyme with Jest-Enzyme testing
+- (Medium) Add GraphQL endpoint for more efficient calls to the backend
+- (High) Fix Decks controller to display current user's decks only if they have decks, otherwise it should display decks created by other users (Also will contain a frontend fix for the user's homepage header to indicate what types of decks are being displayed based on this fix)
+- (Medium) OAuth with Quizlet for better managing user logins
