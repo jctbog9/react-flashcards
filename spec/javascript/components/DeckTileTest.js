@@ -19,6 +19,9 @@ describe('DeckTile', () => {
         name="Test Deck"
         flashcards={flashcards}
         author="test@gmail.com"
+        stars={[
+          {user_id: 1, deck_id: 1}
+        ]}
       />
     )
   });

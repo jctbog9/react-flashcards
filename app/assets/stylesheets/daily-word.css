@@ -1,0 +1,25 @@
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.daily-word-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  background-color: rgba(255,255,255, 0.9);
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #000000;
+  overflow: hidden;
+}
+
+#glasses {
+  color: #54B398;
+}
